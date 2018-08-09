@@ -1,2 +1,3 @@
 # ia-shared-infrastructure
-Shared infrastructure for Immigration &amp; Asylum
+
+This repository contains the shared common infrastructure components for Immigration & Asylum

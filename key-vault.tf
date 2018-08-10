@@ -16,7 +16,7 @@ module "ia-vault" {
   tenant_id               = "${var.tenant_id}"
   object_id               = "${var.jenkins_AAD_objectId}"
   resource_group_name     = "${azurerm_resource_group.rg.name}"
-  product_group_object_id = "87099fce-881e-4654-88d2-7c36b634e622"
+  product_group_object_id = "b16db4e7-5cd6-409a-9f10-632089d91ff5"
 }
 
 output "vaultName" {

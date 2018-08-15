@@ -13,3 +13,18 @@ variable "location" {
   type    = "string"
   default = "UK South"
 }
+
+variable "tenant_id" {
+  type        = "string"
+  description = "The Tenant ID of the Azure Active Directory"
+}
+
+variable "jenkins_AAD_objectId" {
+  type        = "string"
+  description = "This is the ID of the Application you wish to give access to the Key Vault via the access policy"
+}
+
+variable "ia_product_group_object_id" {
+  type    = "string"
+  default = "b16db4e7-5cd6-409a-9f10-632089d91ff5"
+}

@@ -9,5 +9,5 @@ Environment environment = new Environment(env)
 onMaster {
   sharedInfrastructurePipeline('ia', environment.nonProdName, 'nonprod')
   sharedInfrastructurePipeline('ia', environment.demoName, 'nonprod')
-  //sharedInfrastructurePipeline('ia', environment.prodName, 'prod')
+  sharedInfrastructurePipeline('ia', environment.prodName, 'prod')
 }

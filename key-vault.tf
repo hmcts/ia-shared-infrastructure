@@ -1,14 +1,19 @@
-module "ia-vault" {
+locals {
+  key_vault_name = "${var.product}-${var.env}"
+}
+
+module "ia_key_vault" {
   source                  = "git@github.com:hmcts/cnp-module-key-vault?ref=master"
-  name                    = "${var.product}-${var.env}"
-  product                 = "${var.product}"
-  env                     = "${var.env}"
+  name                    = "${local.key_vault_name}"
+  location                = "${var.location}"
+  resource_group_name     = "${local.resource_group_name}"
   tenant_id               = "${var.tenant_id}"
   object_id               = "${var.jenkins_AAD_objectId}"
-  resource_group_name     = "${azurerm_resource_group.rg.name}"
   product_group_object_id = "${var.ia_product_group_object_id}"
+  env                     = "${var.env}"
+  product                 = "${var.product}"
 }
 
 output "vaultName" {
-  value = "${module.ia-vault.key_vault_name}"
+  value = "${local.key_vault_name}"
 }

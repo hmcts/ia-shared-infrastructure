@@ -12,7 +12,7 @@ locals {
 module "ia_app_service_plan" {
   source              = "git@github.com:hmcts/cnp-module-app-service-plan?ref=master"
   location            = "${var.location}"
-  resource_group_name = "${local.resource_group_name}"
+  resource_group_name = "${azurerm_resource_group.rg.name}"
   env                 = "${var.env}"
   ase_name            = "${local.ase_name}"
   asp_name            = "${local.asp_name_without_env}"

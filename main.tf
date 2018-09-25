@@ -1,4 +1,8 @@
-resource "azurerm_resource_group" "rg" {
-  name     = "${var.product}-${var.env}"
-  location = "${var.location}"
+locals {
+  common_tags = {
+    "environment"  = "${var.env}"
+    "Team Name"    = "${var.team_name}"
+    "Team Contact" = "${var.team_contact}"
+    "Destroy Me"   = "${var.destroy_me}"
+  }
 }

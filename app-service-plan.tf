@@ -2,10 +2,7 @@ locals {
   ase_name = "core-compute-${var.env}"
   asp_name_without_env = "${var.product}"
 
-  num_components_for_prod_like = "${var.ia_num_components * 2}"
-  num_components_for_other     = "${var.ia_num_components}"
-
-  asp_capacity = "${var.env == "prod" || var.env == "sprod" ? local.num_components_for_prod_like : local.num_components_for_other}"
+  asp_capacity = "${var.env == "prod" || var.env == "sprod" ? "2"  : "1"}"
   asp_sku_size = "${var.env == "prod" || var.env == "sprod" ? "I2" : "I1"}"
 }
 

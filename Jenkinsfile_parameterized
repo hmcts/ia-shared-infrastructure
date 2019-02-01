@@ -1,6 +1,4 @@
 #!groovy
-import groovy.json.JsonSlurper
-
 @Library('Infrastructure') _
 
 properties([
@@ -18,14 +16,6 @@ node {
   stage('Checkout') {
     deleteDir()
     checkout scm
-  }
-
-  stage('Check tools') {
-    sh '''
-     #!/bin/bash
-     jq --version
-     az --version | head -1
-    '''
   }
 
   stage('Create shared infrastructure') {

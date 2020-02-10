@@ -13,6 +13,7 @@ module "ia_key_vault" {
   env                     = "${var.env}"
   product                 = "${var.product}"
   common_tags             = "${local.common_tags}"
+  managed_identity_object_id = "${var.managed_identity_object_id}"
 }
 
 output "vaultName" {

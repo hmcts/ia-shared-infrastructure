@@ -8,3 +8,10 @@ locals {
 
   managed_identity_object_id = "${var.managed_identity_object_id}"
 }
+
+resource "azurerm_resource_group" "rg" {
+  name     = "${var.product}-${var.env}"
+  location = "${var.location}"
+
+  tags = "${local.common_tags}"
+}

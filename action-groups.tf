@@ -1,5 +1,4 @@
 // IAC Alerts Action Groups
-
 module "iac-action-group" {
   source   = "git@github.com:hmcts/cnp-module-action-group"
   location = "global"

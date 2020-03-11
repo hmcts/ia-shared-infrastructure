@@ -19,3 +19,8 @@ module "ia_key_vault" {
 output "vaultName" {
   value = "${local.key_vault_name}"
 }
+
+data "azurerm_key_vault" "ia_key_vault" {
+  name                = "ia-${var.env}"
+  resource_group_name = "${azurerm_resource_group.rg.name}"
+}

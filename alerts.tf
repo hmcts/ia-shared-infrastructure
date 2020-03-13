@@ -13,7 +13,7 @@ module "ia-exception-alert" {
   severity_level = "2"
   action_group_name = "ia-support"
   trigger_threshold_operator = "GreaterThan"
-  trigger_threshold = 20
+  trigger_threshold = 0
   resourcegroup_name = "${azurerm_resource_group.rg.name}"
   enabled = "${var.env == "prod"}"
 }

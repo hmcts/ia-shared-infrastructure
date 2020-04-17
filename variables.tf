@@ -34,11 +34,12 @@ variable "appinsights_location" {
   type        = "string"
   default     = "West Europe"
   description = "Location for Application Insights"
+
 }
 
 variable "appinsights_application_type" {
   type        = "string"
-  default     = "Web"
+  default     = "web"
   description = "Type of Application Insights (Web/Other)"
 }
 

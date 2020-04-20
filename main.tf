@@ -1,3 +1,7 @@
+provider "azurerm" {
+  version = "1.21.0"
+}
+
 locals {
   common_tags = {
     "environment"  = "${var.env}"

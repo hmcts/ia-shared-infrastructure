@@ -2,7 +2,7 @@
 
 data "azurerm_key_vault_secret" "ia_support_email" {
   name      = "ia-support-email"
-  key_vault_id = "${data.azurerm_key_vault.ia_key_vault.key_vault_id}"
+  vault_uri = "${data.azurerm_key_vault.ia_key_vault.vault_uri}"
 }
 
 module "iac-action-group" {

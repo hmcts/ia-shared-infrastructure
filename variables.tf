@@ -64,10 +64,3 @@ variable "destroy_me" {
 variable "managed_identity_object_id" {
   default = ""
 }
-variable "sku_name" {
-  default = ""
-}
-
-variable "features" {
-  default = ""
-}

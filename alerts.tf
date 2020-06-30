@@ -6,7 +6,7 @@ module "ia-exception-alert" {
 
   alert_name = "ia-exception-alert"
   alert_desc = "Triggers when an IAC exception is received in a 5 minute poll in ia-${var.env}."
-  app_insights_query = "exceptions | sort by timestamp desc"
+  app_insights_query = "union traces, exceptions | where customDimensions[\"LoggingLevel\"] == \"ERROR\" | sort by timestamp desc"
   custom_email_subject = "Alert: Exception in ia-${var.env}"
   frequency_in_minutes = 5
   time_window_in_minutes = 5

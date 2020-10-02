@@ -1,5 +1,5 @@
 provider "azurerm" {
-  version = "1.44.0"
+  features {}
 }
 
 locals {
@@ -13,6 +13,6 @@ locals {
 }
 
 data "azurerm_user_assigned_identity" "ia-shared-identity" {
-  name                = "ia-shared-${var.env}-mi"
+  name                = "ia-${var.env}-mi"
   resource_group_name = "managed-identities-${var.env}-rg"
 }

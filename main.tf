@@ -10,7 +10,6 @@ locals {
     "Destroy Me"   = "${var.destroy_me}"
   }
 
-  managed_identity_object_id = "${var.managed_identity_object_id}"
 }
 
 data "azurerm_user_assigned_identity" "ia-shared-identity" {

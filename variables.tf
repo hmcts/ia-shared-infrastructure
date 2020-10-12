@@ -53,7 +53,3 @@ variable "destroy_me" {
 variable "common_tags" {
   type = map(string)
 }
-
-variable "managed_identity_object_id" {
-  default = ""
-}

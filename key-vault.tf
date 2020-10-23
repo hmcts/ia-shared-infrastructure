@@ -13,7 +13,6 @@ module "ia_key_vault" {
   env                         = "${var.env}"
   product                     = "${var.product}"
   common_tags                 = "${local.common_tags}"
-  managed_identity_object_ids = ["${data.azurerm_user_assigned_identity.ia-shared-identity.principal_id}"]
   create_managed_identity     = true
 }
 

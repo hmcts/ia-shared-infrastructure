@@ -3,7 +3,7 @@ locals {
 }
 
 module "ia_key_vault" {
-  source                      = "git@github.com:hmcts/cnp-module-key-vault?ref=master"
+  source                      = "git@github.com:hmcts/cnp-module-key-vault?ref=azurermv2"
   name                        = "${local.key_vault_name}"
   location                    = "${var.location}"
   resource_group_name         = "${azurerm_resource_group.rg.name}"
@@ -13,7 +13,6 @@ module "ia_key_vault" {
   env                         = "${var.env}"
   product                     = "${var.product}"
   common_tags                 = "${local.common_tags}"
-  managed_identity_object_ids = ["${data.azurerm_user_assigned_identity.ia-shared-identity.principal_id}"]
   create_managed_identity     = true
 }
 

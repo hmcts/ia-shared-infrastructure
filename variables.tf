@@ -50,6 +50,36 @@ variable "destroy_me" {
   default     = "No"
 }
 
+variable "changeUrl" {
+  description = "Change URL"
+  default     = ""
+}
+
+variable "managedBy" {
+  description = "Managed By"
+  default     = "Immigration"
+}
+
+variable "BuiltFrom" {
+  description = "Built From"
+  default     = "https://github.com/HMCTS/ia-shared-infrastructure.git"
+}
+
+variable "contactSlackChannel" {
+  description = "Slack Channel"
+  default     = "#ia-tech"
+}
+
+variable "application" {
+  description = "Application Name"
+  default     = "immigration"
+}
+
+variable "businessArea" {
+  description = "Business Area"
+  default     = "CFT"
+}
+
 variable "common_tags" {
   type = map(string)
 }

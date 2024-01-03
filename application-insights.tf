@@ -1,27 +1,23 @@
-locals {
-  appinsights_name = "${var.product}-${var.env}"
-}
+module "application_insights" {
+  source = "git@github.com:hmcts/terraform-module-application-insights?ref=main"
 
-resource "azurerm_application_insights" "appinsights" {
-  name                = local.appinsights_name
+  env                 = var.env
+  product             = var.product
   location            = var.appinsights_location
   resource_group_name = azurerm_resource_group.rg.name
-  application_type    = var.appinsights_application_type
-  tags                = var.common_tags
-
-  lifecycle {
-    ignore_changes = [
-      # Ignore changes to appinsights as otherwise upgrading to the Azure provider 2.x
-      # destroys and re-creates this appinsights instance
-      application_type,
-    ]
-  }
+  common_tags         = var.common_tags
 }
 
+moved {
+  from = azurerm_application_insights.appinsights
+  to   = module.application_insights.azurerm_application_insights.this
+}
+
+
 output "appInsightsName" {
-  value = "${local.appinsights_name}"
+  value = module.application_insights.name
 }
 
 output "appInsightsInstrumentationKey" {
-  value = "${azurerm_application_insights.appinsights.instrumentation_key}"
+  value = module.application_insights.instrumentation_key
 }

@@ -16,3 +16,8 @@ module "iac-action-group" {
   email_receiver_name    = "IAC Support Mailing List"
   email_receiver_address = "${data.azurerm_key_vault_secret.ia_support_email.value}"
 }
+moved
+{
+  from = module.iac-action-group.azurerm_template_deployment.action-group
+  to = module.iac-action-group.azurerm_resource_group_template_deployment.action-group
+}

@@ -19,5 +19,6 @@ output "appInsightsName" {
 }
 
 output "appInsightsInstrumentationKey" {
-  value = module.application_insights.instrumentation_key
+  sensitive = true
+  value     = module.application_insights.instrumentation_key
 }

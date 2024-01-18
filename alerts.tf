@@ -9,6 +9,7 @@ module "ia-exception-alert" {
   app_insights_query = "union traces, exceptions | where customDimensions[\"LoggingLevel\"] == \"ERROR\" | sort by timestamp desc"
   custom_email_subject = "Alert: Exception in ia-${var.env}"
   action_group_name = "ia-support"
+  severity_level    = "2"
   trigger_threshold = 0
   resourcegroup_name = "${azurerm_resource_group.rg.name}"
   enabled = "${var.env == "prod"}"

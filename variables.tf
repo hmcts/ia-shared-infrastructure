@@ -83,3 +83,8 @@ variable "businessArea" {
 variable "common_tags" {
   type = map(string)
 }
+
+variable "sampling_percentage" {
+  description = "Sampling percentage for Application Insights telemetry"
+  default     = 1
+}

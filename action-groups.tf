@@ -15,4 +15,5 @@ module "iac-action-group" {
   short_name             = "ia-support"
   email_receiver_name    = "IAC Support Mailing List"
   email_receiver_address = data.azurerm_key_vault_secret.ia_support_email.value
+  tags = local.common_tags
 }

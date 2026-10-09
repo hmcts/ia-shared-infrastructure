@@ -1,5 +1,5 @@
 #!groovy
 //noinspection GroovyUnusedAssignment
-@Library("Infrastructure@2.12.1") _
+@Library("Infrastructure@2.12.2") _
 
 withInfraPipeline('ia') {}
